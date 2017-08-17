@@ -35,6 +35,18 @@ public class AccountManage {
 		
 	}
 
+	public static void deletaAccount(){
+		
+		System.out.println("Write account number you want to delete");
+		double accountNumber = in.nextDouble();
+		
+		for (Account a: account) {
+			if(accountNumber == a.getAccountNumber()) {
+				account.remove(a);
+			}
+		}
+		
+	}
 	
 	
 }

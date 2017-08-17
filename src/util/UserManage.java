@@ -47,6 +47,11 @@ public class UserManage {
 		}
 	}
 	
-	
+	public static void showUsers() {
+		for (User u: user) {
+			System.out.println(u);
+		}
+		
+	}
 
 }

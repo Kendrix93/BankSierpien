@@ -32,7 +32,7 @@ public class Login {
 			for (User u: user) {
 				if(login.equals(u.getLogin())) {
 					if(password.equals(u.getPassword()))
-						MainController.UserPanel();
+						MainController.UserPanel(u.getUserID());
 				}
 				System.out.println("Try again!");
 				LoginPanel();
