@@ -2,18 +2,24 @@ package data.model.people;
 
 public class User {
 	
-	private int userID;
+	private final int userID;
 	private String name;
 	private String surname;
 	private int age;
 	private String login;
 	private String password;
-	
+	private static int count = 0;
 	
 	public User (int userID, String name, String surname, int age,
 			String login, String password) {
 		
-		this.userID = userID;
+	    if(userID > 0) {
+	        this.userID = userID;
+	        ++count;
+	      } else {
+	        this.userID = ++count;
+	      }
+		
 		this.name = name;
 		this.surname = surname;
 		this.age = age;
@@ -48,11 +54,6 @@ public class User {
 	}
 
 
-	public void setUserID(int userID) {
-		this.userID = userID;
-	}
-
-
 	public String getName() {
 		return name;
 	}
@@ -60,6 +61,16 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+
+	public static int getCount() {
+		return count;
+	}
+
+
+	public static void setCount(int count) {
+		User.count = count;
 	}
 
 

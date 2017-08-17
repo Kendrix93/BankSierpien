@@ -29,7 +29,7 @@ public class UserManage {
 		System.out.println("passrowd");
 		password = in.next();
 		
-		user.add(new User(1, name, surname, age, login, password));
+		user.add(new User(0, name, surname, age, login, password));
 		
 		System.out.println("DONE");
 		
