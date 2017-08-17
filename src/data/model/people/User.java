@@ -2,7 +2,7 @@ package data.model.people;
 
 public class User {
 	
-	private final int userID;
+	private final int userID; //unique
 	private String name;
 	private String surname;
 	private int age;

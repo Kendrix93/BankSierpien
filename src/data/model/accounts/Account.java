@@ -5,15 +5,24 @@ public abstract class Account {
 	
 	private String accountType;
 	private int userID;
-	private double accountNumber;
+	private final double accountNumber; // unique
 	private double money;
+	private static int count = 1000000;
 	
 	public Account (String accountType, int userID, double accountNumber, double money) {
 		
 		this.accountType = accountType;
 		this.userID = userID;
-		this.accountNumber = accountNumber;
 		this.money = money;
+		
+	    if(accountNumber > 0) {
+	        this.accountNumber = accountNumber;
+	        ++count;
+	      } else {
+	    	  count = count + 11;
+	        this.accountNumber = count;
+	      }
+		
 	}
 
 	public double getMoney() {
@@ -40,12 +49,18 @@ public abstract class Account {
 		this.userID = userID;
 	}
 
-	public double getAccountNumber() {
-		return accountNumber;
+
+
+	public static int getCount() {
+		return count;
 	}
 
-	public void setAccountNumber(double accountNumber) {
-		this.accountNumber = accountNumber;
+	public static void setCount(int count) {
+		Account.count = count;
+	}
+
+	public double getAccountNumber() {
+		return accountNumber;
 	}
 
 	@Override
