@@ -1,4 +1,4 @@
-package main;
+package util;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -6,6 +6,7 @@ import java.util.Scanner;
 import data.holder.PeopleHolder;
 import data.model.people.Admin;
 import data.model.people.User;
+import main.MainController;
 
 public class Login {
 	
@@ -46,7 +47,7 @@ public class Login {
 			for (Admin a: admin) {
 				if(login.equals(a.getLogin())) {
 					if(password.equals(a.getPassword()))
-						MainController.UserPanel();
+						MainController.AdminPanel();
 				}
 				System.out.println("Try again!");
 				LoginPanel();

@@ -22,6 +22,7 @@ public class MainController {
 	public static void AdminPanel() {
 		
 		
+		
 	}
 	
 	public static void UserPanel() {
