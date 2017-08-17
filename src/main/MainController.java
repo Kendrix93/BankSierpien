@@ -21,6 +21,18 @@ public class MainController {
 	
 	public static void AdminPanel() {
 		
+		System.out.println("Choose your option:");
+		System.out.println("1. Show users");
+		System.out.println("2. Show accounts");
+		System.out.println("3. Show user accounts");
+		System.out.println("4. Add user");
+		System.out.println("5. Add account to user");
+		System.out.println("6. Detele user's account");
+		System.out.println("7. DO SMTHG");
+		System.out.println("8. ");
+		System.out.println("9. ");
+		System.out.println("0. Quit");
+		
 		
 		
 	}
