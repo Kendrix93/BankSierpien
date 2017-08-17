@@ -6,15 +6,40 @@ public class User {
 	private String name;
 	private String surname;
 	private int age;
+	private String login;
+	private String password;
 	
 	
-	public User (int userID, String name, String surname, int age) {
+	public User (int userID, String name, String surname, int age,
+			String login, String password) {
 		
 		this.userID = userID;
 		this.name = name;
 		this.surname = surname;
 		this.age = age;
+		this.login = login;
+		this.password = password;
 		
+	}
+
+
+	public String getLogin() {
+		return login;
+	}
+
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 
@@ -63,7 +88,9 @@ public class User {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + age;
+		result = prime * result + ((login == null) ? 0 : login.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((surname == null) ? 0 : surname.hashCode());
 		result = prime * result + userID;
 		return result;
@@ -81,10 +108,20 @@ public class User {
 		User other = (User) obj;
 		if (age != other.age)
 			return false;
+		if (login == null) {
+			if (other.login != null)
+				return false;
+		} else if (!login.equals(other.login))
+			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
 		} else if (!name.equals(other.name))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
 			return false;
 		if (surname == null) {
 			if (other.surname != null)
@@ -99,7 +136,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userID=" + userID + ", name=" + name + ", surname=" + surname + ", age=" + age + "]";
+		return "User [userID=" + userID + ", name=" + name + ", surname=" + surname + ", age=" + age + ", login="
+				+ login + ", password=" + password + "]";
 	}
 
 	

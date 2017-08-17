@@ -7,22 +7,24 @@ import data.model.people.User;
 
 public class PeopleHolder {
 	
-	private ArrayList<User> user = new ArrayList<User>();
-	private ArrayList<Admin> admin = new ArrayList<Admin>();
+	private static ArrayList<User> user = new ArrayList<User>();
+	private static ArrayList<Admin> admin = new ArrayList<Admin>();
 	
 	
-	public ArrayList<User> getUser() {
+	public static ArrayList<User> getUser() {
 		return user;
 	}
-	public void setUser(ArrayList<User> user) {
-		this.user = user;
+	public static void setUser(ArrayList<User> user) {
+		PeopleHolder.user = user;
 	}
-	public ArrayList<Admin> getAdmin() {
+	public static ArrayList<Admin> getAdmin() {
 		return admin;
 	}
-	public void setAdmin(ArrayList<Admin> admin) {
-		this.admin = admin;
+	public static void setAdmin(ArrayList<Admin> admin) {
+		PeopleHolder.admin = admin;
 	}
+	
+
 	
 	
 	
