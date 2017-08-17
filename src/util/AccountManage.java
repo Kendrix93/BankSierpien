@@ -48,5 +48,19 @@ public class AccountManage {
 		
 	}
 	
+	public static void showAccounts() {
+		for (Account a: account) {
+			System.out.println(a);
+		}
+	}
+	
+	public static void showUserAccount(int userID) {
+		for (Account a: account) {
+			if (userID == a.getUserID()) {
+				System.out.println(a);
+			}
+		}
+	}
+	
 	
 }

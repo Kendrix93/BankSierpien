@@ -9,6 +9,7 @@ import data.model.accounts.Account;
 import data.model.people.Admin;
 import data.model.people.User;
 import util.AccountManage;
+import util.Login;
 import util.UserManage;
 
 public class MainController {
@@ -40,28 +41,33 @@ public class MainController {
 		switch(a){
 		case 1:
 			UserManage.showUsers();
-			break;
+			AdminPanel();
 		case 2:
-			
+			AccountManage.showAccounts();
+			AdminPanel();
 		case 3:
-			
+			System.out.println("UserID?");
+			int userID = in.nextInt();
+			AccountManage.showUserAccount(userID);
+			AdminPanel();
 		case 4:
 			UserManage.addUser();
-			break;
+			AdminPanel();
 		case 5:
 			System.out.println("userID?");
 			int userIDprivate = in.nextInt();
 			AccountManage.addPrivateAccount(userIDprivate);
-			break;
+			AdminPanel();
 		case 6:
 			System.out.println("userID");
 			int userIDbusiness = in.nextInt();
 			AccountManage.addBusinesAccount(userIDbusiness);
-			break;
+			AdminPanel();
 		case 7:
 			UserManage.deleteUser();
-			break;
-			
+			AdminPanel();
+		case 0 :
+			Login.LoginPanel();
 			
 		}
 		
@@ -88,7 +94,8 @@ public class MainController {
 		int number = in.nextInt();
 		
 		if(number == 1) {
-			
+			AccountManage.showUserAccount(userID);
+			UserPanel(userID);	
 		}else if (number ==2) {
 			AccountManage.addPrivateAccount(userID);
 			UserPanel(userID);	

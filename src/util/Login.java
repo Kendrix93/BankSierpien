@@ -21,6 +21,7 @@ public class Login {
 		System.out.println("To what type of account you want to log in?");
 		System.out.println("1.User");
 		System.out.println("2.Admin");
+		System.out.println("0. Exit");
 		int number = in.nextInt();
 		
 		if(number == 1) {
@@ -52,6 +53,8 @@ public class Login {
 				System.out.println("Try again!");
 				LoginPanel();
 			}
+		}else if(number == 0){
+			System.exit(0);
 			
 			
 		}else {
