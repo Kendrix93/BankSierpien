@@ -151,6 +151,13 @@ public class User {
 				+ login + ", password=" + password + "]";
 	}
 
+
+	public String toFile(String separator) {
+		// TODO Auto-generated method stub
+		return getUserID() + separator + getName() + separator + getSurname() + separator +
+				getAge() + separator + getLogin() + separator + getPassword();
+	}
+
 	
 	
 }

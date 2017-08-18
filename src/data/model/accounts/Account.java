@@ -105,6 +105,12 @@ public abstract class Account {
 		return "Account [accountType=" + accountType + ", userID=" + userID + ", accountNumber=" + accountNumber
 				+ ", money=" + money + "]";
 	}
+
+	public String toFile(String separator) {
+		// TODO Auto-generated method stub
+		return getAccountType() + separator + getUserID() + separator + getAccountNumber() +
+				separator + getMoney();
+	}
 	
 	
 	
