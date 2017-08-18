@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import data.holder.AccountsHolder;
 import data.holder.PeopleHolder;
 import data.model.accounts.Account;
+import data.model.accounts.BusinessAccount;
+import data.model.accounts.PrivateAccount;
 import data.model.people.User;
 
 public class ReadFromSCV {
@@ -45,5 +47,39 @@ public class ReadFromSCV {
 		}
 		return user;
 	}
+	
+	
+	public static ArrayList<Account> readFromFileAccount(){
+		
+		Path path = Paths.get(filename2);
+		ArrayList<String> read = new ArrayList<String>();
+		try {
+			read = (ArrayList<String>) Files.readAllLines(path);
+		} catch (IOException ex) {
+			System.out.println("There is no file");
+		}
+		ArrayList<Account> account = toObject1(read);
+		return account;
+		
+	}
+	
+	public static ArrayList<Account> toObject1(ArrayList<String> read) {
+		
+		for(String line : read) {
+			String [] l = line.split(";");
+			if (l[0].equals("BUSINESS")) {
+				Account accounts = new BusinessAccount(l[0], Integer.parseInt(l[1]), 
+						Double.parseDouble(l[2]), Double.parseDouble(l[3]));
+				account.add(accounts);
+			}else if (l[0].equals("PRIVATE")) {
+			Account accounts = new PrivateAccount(l[0], Integer.parseInt(l[1]), 
+					Double.parseDouble(l[2]), Double.parseDouble(l[3]));
+			account.add(accounts);
+			}
+		}
+		return account;
+	}
+	
 
 }
+
