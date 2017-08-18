@@ -1,13 +1,8 @@
 package main;
 
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
-import data.holder.AccountsHolder;
-import data.holder.PeopleHolder;
-import data.model.accounts.Account;
-import data.model.people.Admin;
-import data.model.people.User;
 import util.AccountManage;
 import util.Login;
 import util.UserManage;
@@ -15,14 +10,17 @@ import util.UserManage;
 public class MainController {
 	
 	
-	private static ArrayList<Account> account = AccountsHolder.getAccount();
-	private static ArrayList<Admin> admin = PeopleHolder.getAdmin();
-	private static ArrayList<User> user = PeopleHolder.getUser();
+//	private static ArrayList<Account> account = AccountsHolder.getAccount();
+//	private static ArrayList<Admin> admin = PeopleHolder.getAdmin();
+//	private static ArrayList<User> user = PeopleHolder.getUser();
 	
 	private static Scanner in = new Scanner(System.in);
 	
 	
 	public static void AdminPanel() {
+		
+		util.SaveToCSV.saveToFileUser();
+		util.SaveToCSV.saveToFileAccount();
 		
 		System.out.println("Choose your option:");
 		System.out.println("1. Show users");
@@ -76,6 +74,9 @@ public class MainController {
 	}
 	
 	public static void UserPanel(int userID) {
+		
+		util.SaveToCSV.saveToFileUser();
+		util.SaveToCSV.saveToFileAccount();
 		
 		System.out.println("Choose your option:");
 		System.out.println("1. Show your accounts");
