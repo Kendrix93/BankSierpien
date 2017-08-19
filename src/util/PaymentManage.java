@@ -16,7 +16,7 @@ public class PaymentManage {
 	
 	private static Scanner in = new Scanner(System.in);
 	
-	
+	// one time payment
 	public static void makePayment(int userID) {
 
 		System.out.println("Your account number");
@@ -55,6 +55,8 @@ public class PaymentManage {
 
 	}
 	
+	
+	//constatn payment
 	public static void makeConstatnPayment(int userID) {
 
 		System.out.println("Your account number");
@@ -95,6 +97,16 @@ public class PaymentManage {
 		}
 		System.out.println("This is not your account number");
 		MainController.UserPanel(userID);
+
+	}
+	
+	public static void showYourConstatnPayments(int userID) {
+
+		for (Payment p : payment) {
+			if (p.getUserID() == userID) {
+				System.out.println(p);
+			}
+		}
 
 	}
 

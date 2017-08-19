@@ -4,12 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import data.holder.AccountsHolder;
-import data.holder.PaymentHolder;
 import data.model.accounts.Account;
 import data.model.accounts.BusinessAccount;
 import data.model.accounts.PrivateAccount;
-import data.model.payment.Payment;
-import main.MainController;
 
 
 public class AccountManage {

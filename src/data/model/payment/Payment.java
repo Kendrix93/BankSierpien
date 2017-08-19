@@ -118,4 +118,10 @@ public class Payment {
 	}
 	
 	
+	public String toFile(String separator) {
+		return getUserID() + separator + getAccountNumber1() + separator 
+				+ getAccountNumber2() + separator + getMoney() + separator + getDays();
+		
+	}
+	
 }

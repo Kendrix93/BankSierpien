@@ -83,7 +83,7 @@ public class MainController {
 		System.out.println("4. Delete account");
 		System.out.println("5. Make a payment");
 		System.out.println("6. Make a constant payment on Business Account");
-		System.out.println("7. ");
+		System.out.println("7. Show your constatn payments");
 		System.out.println("8. ");
 		System.out.println("9. ");
 		System.out.println("0. Quit");
@@ -115,6 +115,9 @@ public class MainController {
 			PaymentManage.makeConstatnPayment(userID);
 			UserPanel(userID);
 			
+		}else if( number ==7) {
+			PaymentManage.showYourConstatnPayments(userID);
+			UserPanel(userID);
 		}
 	}
 }
