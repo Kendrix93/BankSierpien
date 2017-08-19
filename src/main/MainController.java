@@ -19,6 +19,7 @@ public class MainController {
 		
 		util.SaveToCSV.saveToFileUser();
 		util.SaveToCSV.saveToFileAccount();
+		util.SaveToCSV.saveToFilePayments();
 		
 		System.out.println("Choose your option:");
 		System.out.println("1. Show users");
@@ -75,6 +76,7 @@ public class MainController {
 		
 		util.SaveToCSV.saveToFileUser();
 		util.SaveToCSV.saveToFileAccount();
+		util.SaveToCSV.saveToFilePayments();
 		
 		System.out.println("Choose your option:");
 		System.out.println("1. Show your accounts");
@@ -118,6 +120,8 @@ public class MainController {
 		}else if( number ==7) {
 			PaymentManage.showYourConstatnPayments(userID);
 			UserPanel(userID);
+		}else if ( number == 0) {
+			Login.LoginPanel();
 		}
 	}
 }

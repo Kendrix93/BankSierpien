@@ -21,6 +21,7 @@ public class Main {
 		
 		util.ReadFromSCV.readFromFileUser();
 		util.ReadFromSCV.readFromFileAccount();
+		util.ReadFromSCV.readFromFilePayments();
 		Login.LoginPanel();
 	}
 
