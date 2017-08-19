@@ -7,6 +7,7 @@ import data.holder.AccountsHolder;
 import data.model.accounts.Account;
 import data.model.accounts.BusinessAccount;
 import data.model.accounts.PrivateAccount;
+import main.MainController;
 
 
 public class AccountManage {
@@ -63,39 +64,42 @@ public class AccountManage {
 		}
 	}
 	
-	public static void makePayment(int UserID) {
-		
+	public static void makePayment(int userID) {
+
 		System.out.println("Your account number");
 		double accountNumber = in.nextDouble();
 		System.out.println("How much money");
 		double money = in.nextDouble();
 		System.out.println("To what account? Write account number");
 		double accountNumber2 = in.nextDouble();
-		
-		for (Account a: account) {
-			if (a.getAccountNumber() == accountNumber && a.getUserID() == UserID) {
-				if(a.getMoney() >= money) {
-					for (Account aa: account) {
+
+		for (Account a : account) {
+			if (a.getAccountNumber() == accountNumber && a.getUserID() == userID) {
+				if (a.getMoney() >= money) {
+					for (Account aa : account) {
 						if (aa.getAccountNumber() == accountNumber2) {
-							money = aa.getMoney() + money;
-							aa.setMoney(money);
-							break;
-							
+							double money1 = aa.getMoney() + money;
+							double money2 = a.getMoney() - money;
+							aa.setMoney(money1);
+							a.setMoney(money2);
+							System.out.println("Payment done");
+							MainController.UserPanel(userID);
+
 						}
-						
+
 					}
-					
+					System.out.println("Wrong number to pay");
+					MainController.UserPanel(userID);
 				}else {
-					System.out.println("Not enought money");
+				System.out.println("Not enough money");
+				MainController.UserPanel(userID);
 				}
-			
 			}
-			
+
 		}
-		System.out.println("wrong account");
-		
-		
+		System.out.println("This is not your account number");
+		MainController.UserPanel(userID);
+
 	}
-	
 	
 }
