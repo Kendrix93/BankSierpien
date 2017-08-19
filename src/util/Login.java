@@ -32,12 +32,14 @@ public class Login {
 			
 			for (User u: user) {
 				if(login.equals(u.getLogin())) {
-					if(password.equals(u.getPassword()))
+					if(password.equals(u.getPassword())) {
 						MainController.UserPanel(u.getUserID());
+					}
 				}
-				System.out.println("Try again!");
-				LoginPanel();
 			}
+			
+			System.out.println("Try again!");
+			LoginPanel();
 			
 		}else if (number == 2) {
 			System.out.println("Login: ");
@@ -47,12 +49,16 @@ public class Login {
 			
 			for (Admin a: admin) {
 				if(login.equals(a.getLogin())) {
-					if(password.equals(a.getPassword()))
+					if(password.equals(a.getPassword())) {
 						MainController.AdminPanel();
+					}
 				}
-				System.out.println("Try again!");
-				LoginPanel();
 			}
+			
+			System.out.println("Try again!");
+			LoginPanel();
+			
+			
 		}else if(number == 0){
 			System.exit(0);
 			

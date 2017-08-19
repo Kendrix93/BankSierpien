@@ -41,10 +41,14 @@ public class UserManage {
 		int userID = in.nextInt();
 		
 		for(User u: user) {
-			if (userID == u.getUserID()) {
+			if (u.getUserID() == userID) {
+				System.out.println(u);
 				user.remove(u);
+				break;
 			}
 		}
+		System.out.println("DONE");
+		
 	}
 	
 	public static void showUsers() {

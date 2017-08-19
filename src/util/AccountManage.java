@@ -43,6 +43,7 @@ public class AccountManage {
 		for (Account a: account) {
 			if(accountNumber == a.getAccountNumber()) {
 				account.remove(a);
+				break;
 			}
 		}
 		
