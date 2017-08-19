@@ -110,6 +110,8 @@ public class MainController {
 			UserPanel(userID);
 			
 		}else if (number ==5) {
+			AccountManage.makePayment(userID);
+			UserPanel(userID);
 			
 		}else if (number ==6) {
 			

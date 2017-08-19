@@ -63,5 +63,39 @@ public class AccountManage {
 		}
 	}
 	
+	public static void makePayment(int UserID) {
+		
+		System.out.println("Your account number");
+		double accountNumber = in.nextDouble();
+		System.out.println("How much money");
+		double money = in.nextDouble();
+		System.out.println("To what account? Write account number");
+		double accountNumber2 = in.nextDouble();
+		
+		for (Account a: account) {
+			if (a.getAccountNumber() == accountNumber && a.getUserID() == UserID) {
+				if(a.getMoney() >= money) {
+					for (Account aa: account) {
+						if (aa.getAccountNumber() == accountNumber2) {
+							money = aa.getMoney() + money;
+							aa.setMoney(money);
+							break;
+							
+						}
+						
+					}
+					
+				}else {
+					System.out.println("Not enought money");
+				}
+			
+			}
+			
+		}
+		System.out.println("wrong account");
+		
+		
+	}
+	
 	
 }
