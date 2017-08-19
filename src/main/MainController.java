@@ -5,14 +5,12 @@ import java.util.Scanner;
 
 import util.AccountManage;
 import util.Login;
+import util.PaymentManage;
 import util.UserManage;
 
 public class MainController {
 	
-	
-//	private static ArrayList<Account> account = AccountsHolder.getAccount();
-//	private static ArrayList<Admin> admin = PeopleHolder.getAdmin();
-//	private static ArrayList<User> user = PeopleHolder.getUser();
+
 	
 	private static Scanner in = new Scanner(System.in);
 	
@@ -110,10 +108,12 @@ public class MainController {
 			UserPanel(userID);
 			
 		}else if (number ==5) {
-			AccountManage.makePayment(userID);
+			PaymentManage.makePayment(userID);
 			UserPanel(userID);
 			
 		}else if (number ==6) {
+			PaymentManage.makeConstatnPayment(userID);
+			UserPanel(userID);
 			
 		}
 	}
